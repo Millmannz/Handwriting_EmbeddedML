@@ -1,0 +1,31 @@
+# Build output
+Debug/
+Release/
+build/
+*.o
+*.elf
+*.bin
+*.hex
+*.map
+*.list
+*.su
+
+# STM32CubeIDE / Eclipse metadata
+.metadata/
+.settings/
+Debug*/
+Release*/
+
+# CubeMX-generated temp/backup files
+*.ioc.bak
+*~
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Optional: IDE project files
+# Uncomment these if you don't want to share IDE-specific configs with teammates
+# .project
+# .cproject
+# .mxproject
