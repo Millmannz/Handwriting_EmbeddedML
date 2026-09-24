@@ -50,11 +50,17 @@ This project combines a resistive/capacitive touchscreen input with an on-device
 
 ```
 .
-├── Core/                   # STM32 firmware source (main.c, drivers, etc.)
-├── model_training/         # Python scripts/notebooks for training the CNN
-│   ├── train.py
-│   └── export_model.py
-├── Drivers/                # HAL and touchscreen/display drivers
+├── HandwritingML/              # STM32CubeIDE project
+│   ├── Core/                   # Application source (main.c, drivers, etc.)
+│   ├── Drivers/                # CMSIS + STM32G4xx HAL drivers
+│   ├── .cproject                # Eclipse/CubeIDE C project config
+│   ├── .mxproject               # CubeMX project metadata
+│   ├── .project                 # Eclipse project descriptor
+│   ├── HandwritingML.ioc        # CubeMX configuration file
+│   ├── STM32G474RETX_FLASH.ld   # Flash linker script
+│   └── STM32G474RETX_RAM.ld     # RAM linker script
+├── model_training/             # Python scripts/notebooks for training the model
+├── .gitignore
 └── README.md
 ```
 
