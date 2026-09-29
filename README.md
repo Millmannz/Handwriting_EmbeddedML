@@ -49,17 +49,26 @@ This project combines a resistive/capacitive touchscreen input with an on-device
 ## Project Structure
 
 ```
-.
-├── HandwritingML/              # STM32CubeIDE project
-│   ├── Core/                   # Application source (main.c, drivers, etc.)
-│   ├── Drivers/                # CMSIS + STM32G4xx HAL drivers
-│   ├── .cproject                # Eclipse/CubeIDE C project config
-│   ├── .mxproject               # CubeMX project metadata
-│   ├── .project                 # Eclipse project descriptor
-│   ├── HandwritingML.ioc        # CubeMX configuration file
-│   ├── STM32G474RETX_FLASH.ld   # Flash linker script
-│   └── STM32G474RETX_RAM.ld     # RAM linker script
-├── model_training/             # Python scripts/notebooks for training the model
+├── HandwritingML/               # STM32CubeIDE project
+│   ├── Core/
+│   │   ├── Inc/                 # Header files
+│   │   ├── Src/                 # Application source (main.c, drivers, etc.)
+│   │   └── Startup/             # Startup/assembly files
+│   ├── Drivers/                 # CMSIS + STM32G4xx HAL drivers
+│   ├── .cproject                 # Eclipse/CubeIDE C project config
+│   ├── .mxproject                # CubeMX project metadata
+│   ├── .project                  # Eclipse project descriptor
+│   ├── HandwritingML.ioc          # CubeMX configuration file
+│   ├── STM32G474RETX_FLASH.ld     # Flash linker script
+│   └── STM32G474RETX_RAM.ld       # RAM linker script
+├── data/
+│   └── MNIST/
+│       └── raw/                  # Raw MNIST dataset files
+├── model_training/
+│   ├── __pycache__/
+│   ├── model.py                  # Model architecture definition
+│   ├── quantize.py               # Post-training quantization script
+│   └── train.py                  # Training loop / MNIST training script
 ├── .gitignore
 └── README.md
 ```
@@ -87,10 +96,11 @@ This project combines a resistive/capacitive touchscreen input with an on-device
 
 | Metric | Value |
 |---|---|
-| Training accuracy | [Coming Soon]% |
-| Test accuracy | [Coming Soon]% |
+| Training accuracy | 99.21% |
+| Test accuracy | 97.45% |
+| Test accuracy post-quantize | 97.26% |
 | On-device inference time | [Coming Soon] ms |
-| Model size (post-quantization) | [Coming soon] KB |
+| Model size (post-quantization) | 54 KB |
 
 ## Future Improvements
 
